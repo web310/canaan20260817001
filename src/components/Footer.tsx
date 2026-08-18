@@ -1,7 +1,8 @@
 import React from 'react';
 import { Language } from '../types';
 import { CHURCH_INFO } from '../data/churchData';
-import { Church, MapPin, Phone, Mail, Clock, Heart, ShieldCheck, ArrowUp } from 'lucide-react';
+import { ChurchLogo } from './ChurchLogo';
+import { MapPin, Phone, Mail, Clock, Heart, ShieldCheck, ArrowUp } from 'lucide-react';
 
 interface FooterProps {
   lang: Language;
@@ -23,9 +24,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onOpenGiving, onOpenAI }) 
           {/* Col 1: Church Branding & Pastor Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="p-2.5 bg-amber-600 text-white rounded-xl">
-                <Church className="w-6 h-6" />
-              </div>
+              <ChurchLogo size="lg" className="rounded-xl overflow-hidden border border-amber-500/30" />
               <div>
                 <div className="font-serif text-lg font-bold text-white leading-tight">
                   {CHURCH_INFO.nameEn}

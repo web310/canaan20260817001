@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Language } from '../types';
 import { CHURCH_INFO } from '../data/churchData';
-import { Church, Globe, Heart, Phone, MapPin, Calendar, Clock, Menu, X, Sparkles, FileText, ShieldCheck, LogOut, Lock, Github } from 'lucide-react';
+import { ChurchLogo } from './ChurchLogo';
+import { Globe, Heart, Phone, MapPin, Calendar, Clock, Menu, X, Sparkles, FileText, ShieldCheck, LogOut, Lock, Github } from 'lucide-react';
 
 interface NavbarProps {
   lang: Language;
@@ -161,10 +162,8 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo & Church Name */}
           <a href="#" className="flex items-center space-x-2.5 xl:space-x-3 group flex-shrink-0">
-            <div className={`p-2 xl:p-2.5 rounded-xl transition-transform group-hover:scale-105 shadow-sm flex-shrink-0 ${
-              scrolled ? 'bg-amber-700 text-white' : 'bg-amber-600 text-white border border-amber-400/30'
-            }`}>
-              <Church className="w-5 h-5 xl:w-6 xl:h-6" />
+            <div className="transition-transform group-hover:scale-105 flex-shrink-0">
+              <ChurchLogo size="md" lightMode={scrolled} className="rounded-xl overflow-hidden shadow-md" />
             </div>
             <div className="flex-shrink-0 whitespace-nowrap">
               <div className={`font-serif text-base sm:text-lg xl:text-xl font-bold tracking-tight leading-tight whitespace-nowrap ${
